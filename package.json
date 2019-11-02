@@ -1,8 +1,8 @@
 {
-    "name": "testdependency",
+    "name": "React-Sentence-Tree-Demo",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://github.com/Lucas-Kohorst/react-sentence-tree-demo",
+    "homepage": "https://lucas-kohorst.github.io/react-sentence-tree-demo",
     "dependencies": {
         "@material-ui/core": "^4.5.1",
         "corenlp": "^1.5.2",

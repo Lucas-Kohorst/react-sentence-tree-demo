@@ -3,14 +3,24 @@
 
 ### Run Locally
 #### Demo
-Clone this repo: git clone https://github.com/Lucas-Kohorst/react-sentence-tree-demo.git
+Clone this repo: 
+```git clone https://github.com/Lucas-Kohorst/react-sentence-tree-demo.git
 cd react-sentence-tree-demo
-Run yarn or npm install
+
+yarn install 
+// or 
+npm i
+```
 
 #### Package
-Clone this repo: git clone https://github.com/Lucas-Kohorst/react-sentence-tree.git
+Clone this repo: 
+```git clone https://github.com/Lucas-Kohorst/react-sentence-tree.git
 cd react-sentence-tree
-Run yarn or npm install
+
+yarn install 
+// or 
+npm i
+```
 
 ### Run StandfordCoreNLP Server
 Credits to [CoreNLP @gerardobort](https://www.npmjs.com/package/corenlp)
