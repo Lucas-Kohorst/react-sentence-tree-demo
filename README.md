@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React-Sentence-Tree Demo
+## This is the demo application for the [react-sentence-tree](https://github.com/Lucas-Kohorst/react-sentence-tree) package
 
-## Available Scripts
+### Run Locally
+#### Demo
+Clone this repo: git clone https://github.com/Lucas-Kohorst/react-sentence-tree-demo.git
+cd react-sentence-tree-demo
+Run yarn or npm install
 
-In the project directory, you can run:
+#### Package
+Clone this repo: git clone https://github.com/Lucas-Kohorst/react-sentence-tree.git
+cd react-sentence-tree
+Run yarn or npm install
 
-### `yarn start`
+### Run StandfordCoreNLP Server
+## 3. StanfordNLP
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Credits to [CoreNLP @gerardobort](https://www.npmjs.com/package/corenlp)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+##### Download Stanford CoreNLP
 
-### `yarn test`
+##### Shortcut
+Stanford CoreNLP can by downloaded and ran through npm thanks to [CoreNLP @gerardobort](https://www.npmjs.com/package/corenlp)
+Via `npm`, run this command from your own project after having installed this library:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm explore corenlp -- npm run corenlp:download
+```
 
-### `yarn build`
+Once downloaded you can easily start the server by running
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm explore corenlp -- npm run corenlp:server
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Or you can manually download the project from the Stanford's CoreNLP download section at: https://stanfordnlp.github.io/CoreNLP/download.html
+You may want to download, apart of the full package, other language models (see more on that page).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Via sources
 
-### `yarn eject`
+For advanced projects, when you have to customize the library a bit more, we highly recommend to download the StanfordCoreNLP from the [original repository](https://github.com/stanfordnlp/CoreNLP), and compile the source code by using `ant jar`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Configure Stanford CoreNLP
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+There are two method to connect your NodeJS application to Stanford CoreNLP:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. HTTP is the preferred method since it requires CoreNLP to initialize just once to serve many requests, it also avoids extra I/O given that the CLI method need to write temporary files to run *recommended*.
+2. Via Command Line Interface, this is by spawning processes from your app.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##### Using StanfordCoreNLPServer
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```bash
+# Run the server using all jars in the current directory (e.g., the CoreNLP home directory)
+java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
+```
