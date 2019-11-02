@@ -13,8 +13,6 @@ cd react-sentence-tree
 Run yarn or npm install
 
 ### Run StandfordCoreNLP Server
-## 3. StanfordNLP
-
 Credits to [CoreNLP @gerardobort](https://www.npmjs.com/package/corenlp)
 
 ##### Download Stanford CoreNLP
